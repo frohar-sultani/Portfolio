@@ -1,0 +1,371 @@
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Nunito:wght@300;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+/* Header  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #5b2c6f; /* بنفش تیره */
+}
+/* استایل فوتر */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ccc;
+  margin-top: 3rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* کانتینر آیکون‌های شبکه اجتماعی */
+.social-icons {
+  margin-bottom: 0.8rem;
+}
+
+/* لینک‌های آیکون */
+.social-icons a {
+  color: #555;
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+/* افکت هاور */
+.social-icons a:hover {
+  color: #007acc; /* رنگ دلخواه برای هاور */
+  transform: scale(1.2);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5b2c6f;
+  font-weight: 600;
+  position: relative;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #f0e130;
+  color: #222;
+}
+
+/* Theme Switch Button */
+.theme-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  user-select: none;
+  z-index: 1000;
+  color: #5b2c6f;
+  background: transparent;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.theme-switch:hover {
+  color: #f0e130;
+}
+
+/*  Home Section */
+
+.home-intro p {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+.home-image {
+  max-width: 220px;
+  margin-top: 2rem;
+  border-radius: 50%;
+  border: 3px solid #5b2c6f;
+  box-shadow: 0 0 15px rgba(91,44,111,0.5);
+  transition: transform 0.3s ease;
+}
+
+.home-image:hover {
+  transform: scale(1.05) rotate(3deg);
+} 
+
+/* بخش بندی اصلی */
+.home-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.intro-text {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.intro-image-circle {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* انیمیشن اصلی حالت روشن */
+.circle-border {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(45deg,  #007acc,  #dcd9ae, yellow
+  );
+  background-size: 400% 400%;
+  animation: borderSpin 6s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 3s ease;
+}
+
+/* عکس دایره‌ای */
+.circle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* انیمیشن حالت روشن */
+@keyframes borderSpin {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+#toggle-theme:checked ~ .container .circle-border {
+  background: linear-gradient(45deg,  #2e003e,  #0d001f, #2e003e );
+  background-size: 400% 400%;
+  animation: borderSpinDark 3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(102, 170, 255, 0.4);
+}
+
+
+
+/* انیمیشن حالت دارک */
+@keyframes borderSpinDark {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* About Section  */
+.about-text ul {
+  margin-top: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #444;
+}
+
+.about-text p, .about-text li {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Projects Section */
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #f7f2ff;
+  border: 2px solid #5b2c6f;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 20px #f0e130;
+}
+
+.project-card img {
+  max-width: 50%;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+}
+
+/*  Contact Form  */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #5b2c6f;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 2px solid #5b2c6f;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f0e130;
+}
+
+.btn {
+  background-color: #5b2c6f;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f0e130;
+  color: #222;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* ===== Dark Mode ===== */
+#toggle-theme:checked ~ .container {
+  background-color: #1b1b1b;
+  color: #eee;
+}
+
+#toggle-theme:checked ~ .container header h1,
+#toggle-theme:checked ~ .container nav a {
+  color: #dda0dd; /* Light purple */
+}
+
+#toggle-theme:checked ~ .container nav a.active,
+#toggle-theme:checked ~ .container nav a:hover {
+  background-color: #f0e130;
+  color: #222;
+}
+
+#toggle-theme:checked ~ .container footer {
+  color: #aaa;
+}
+
+#toggle-theme:checked ~ .container .home-intro p,
+#toggle-theme:checked ~ .container .about-text p,
+#toggle-theme:checked ~ .container .about-text li {
+  color: #ccc;
+}
+
+#toggle-theme:checked ~ .container .project-card {
+  background-color: #333;
+  border-color: #dda0dd;
+  color: #ddd;
+}
+
+#toggle-theme:checked ~ .container .project-card:hover {
+  box-shadow: 0 0 20px #f0e130;
+}
+
+#toggle-theme:checked ~ .container .contact-form label {
+  color: #dda0dd;
+}
+
+#toggle-theme:checked ~ .container .contact-form input,
+#toggle-theme:checked ~ .container .contact-form textarea {
+  background-color: #222;
+  border-color: #dda0dd;
+  color: #eee;
+}
+
+#toggle-theme:checked ~ .theme-switch {
+  color: #f0e130;
+}
+
+#toggle-theme:checked ~ .theme-switch:hover {
+  color: #dda0dd;
+}
+
+/*  Responsive */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
